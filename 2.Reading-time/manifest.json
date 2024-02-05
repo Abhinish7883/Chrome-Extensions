@@ -1,0 +1,33 @@
+{
+    "manifest_version":3,
+    "name": "reading books",
+    "version": "1.0",
+    "description": "Add the reading time to Chrome Extension documentation articles",
+    "icons": {
+        "16": "assects/icons/16-icon.png",
+        "32": "assects/icons/16-icon.png",
+        "48": "assects/icons/16-icon.png",
+        "128": "assects/icons/16-icon.png"
+    },
+    "content_scripts": [
+        {
+          "js": ["scripts/content.js"],
+          "matches": [
+            "https://developer.chrome.com/*",
+            "https://developer.chrome.com/docs/webstore/*"
+          ]
+        }
+      ],
+      "background": {
+        "service_worker": "scripts/background.js"
+      },
+      "action": {
+        "default_icon": {
+            "16": "assects/icons/16-icon.png",
+            "32": "assects/icons/16-icon.png",
+            "48": "assects/icons/16-icon.png",
+            "128": "assects/icons/16-icon.png"
+        }
+      },
+      "permissions": ["activeTab","scripting"]
+}
